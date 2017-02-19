@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+<<<<<<< HEAD
 import axios from 'axios';
 
 export default class Home extends Component {
@@ -36,3 +37,17 @@ export default class Home extends Component {
     );
   }
 }
+=======
+import GithubSearch from '../containers/GithubSearch.js'
+
+ export default class Home extends Component {
+   render(){
+     return (
+       <div className="">
+         <h1>Home</h1>
+         <GithubSearch />
+       </div>
+     );
+   }
+ }
+>>>>>>> s01
