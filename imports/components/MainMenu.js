@@ -4,10 +4,11 @@ import { Icon, Menu } from 'semantic-ui-react'
 const MainMenu = () => {
   return (
     <Menu>
-        <Menu.Item header>Simplon Playground</Menu.Item>
-        <Menu.Item name='Github Search' active={true} onClick={this.handleItemClick} />
-        <Menu.Item name='jobs' onClick={this.handleItemClick} />
-        <Menu.Item name='locations' onClick={this.handleItemClick} />
+        <Menu.Item header href="/">Simplon Playground</Menu.Item>
+        <Menu.Item
+          href="/githubsearch"
+          name='Github Search'
+          onClick={this.handleItemClick} />
     </Menu>
   )
 }

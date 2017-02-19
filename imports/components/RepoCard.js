@@ -5,7 +5,6 @@ export default class Search extends Component {
 
   render(){
     const repo = this.props.data;
-    console.log(repo);
     return(
     <Card href={repo.html_url} target="blanck">
     <Image src={repo.owner.avatar_url} style={{minHeight: '250px'}}/>
