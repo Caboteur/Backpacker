@@ -5,9 +5,10 @@ export default class Search extends Component {
 
   render(){
     const repo = this.props.data;
+    console.log(repo);
     return(
-      <Card>
-    <Image src={repo.owner.avatar_url} />
+    <Card href={repo.html_url} target="blanck">
+    <Image src={repo.owner.avatar_url} style={{minHeight: '250px'}}/>
     <Card.Content>
       <Card.Header>
       </Card.Header>
@@ -17,14 +18,11 @@ export default class Search extends Component {
         </span>
       </Card.Meta>
       <Card.Description>
-        Matthew is a musician living in Nashville.
+        {repo.description}
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        22 Friends
-      </a>
+      <p><Icon name='user' />Suivi par <b>{repo.watchers}</b> personnes</p>
     </Card.Content>
   </Card>
     );

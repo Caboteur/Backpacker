@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import _ from 'lodash';
-import {Card} from 'semantic-ui-react';
+import {Card, Segment} from 'semantic-ui-react';
 
 import Search from '../components/Search.js';
 import RepoCard from '../components/RepoCard.js';
@@ -47,11 +47,15 @@ export default class GithubSearch extends Component {
 
     return(
       <div>
-        <h1> JE suis le composant Githubsearch</h1>
-        <Search placeholder="Chercher un repo sur github" searchTerm={debouncedSearch} />
-        <Card.Group>
-        {results}
-        </Card.Group>
+        <Segment>
+          <h1> Je suis le composant Githubsearch</h1>
+          <Search placeholder="Chercher un repo sur github" searchTerm={debouncedSearch} />
+        </Segment>
+        <Segment>
+          <Card.Group itemsPerRow={4}>
+          {results}
+          </Card.Group>
+        </Segment>
       </div>
     );
   }
