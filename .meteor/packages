@@ -23,5 +23,7 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 kadira:flow-router-ssr
 themeteorchef:bert
 accounts-base
+accounts-password
 accounts-github
 okgrow:accounts-ui-react
+github-config-ui

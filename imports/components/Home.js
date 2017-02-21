@@ -4,7 +4,10 @@ import Welcome from './Welcome.js';
 
 export default class Home extends Component{
 
+
+
   render(){
+
     return (
       <div className="ui container">
         <Segment.Group horizontal>
