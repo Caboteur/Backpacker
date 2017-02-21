@@ -29,16 +29,8 @@ import React, {Component} from 'react';
      })
    }
 
-   listeArticles(){
-     this.state.articles.map( (article) => {
-       console.log(article.title);
-       return (
-         <div>
-          <h1>{article.title}</h1>
-          <p>{article.description}</p>
-         </div>
-       )
-     } );
+   saveArticle(){
+     
    }
 
    getArticles(){
@@ -59,8 +51,14 @@ import React, {Component} from 'react';
      console.log(this.state.articles);
      return (
        <div className="">
-         <h1>Home</h1>
-         {this.listeArticles}
+        {this.state.articles.map( (article)=> {
+          return (
+            <div key={article._id}>
+              <h1>{article.title}</h1>
+              <p>{article.description}</p>
+            </div>
+          )
+        } )}
        </div>
      );
    }

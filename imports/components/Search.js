@@ -4,6 +4,7 @@ import {Input} from 'semantic-ui-react';
 export default class Search extends Component {
 
   handleChange(e){
+    e.preventDefault();
     this.props.searchTerm(e.target.value);
   }
 
