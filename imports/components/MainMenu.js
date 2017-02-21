@@ -7,8 +7,7 @@ const MainMenu = () => {
         <Menu.Item header href="/">Simplon Playground</Menu.Item>
         <Menu.Item
           href="/githubsearch"
-          name='Github Search'
-          onClick={this.handleItemClick} />
+          name='Github Search'/>
     </Menu>
   )
 }
