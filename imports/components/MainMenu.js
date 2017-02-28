@@ -6,6 +6,7 @@ const MainMenu = () => {
   return (
     <Menu>
         <Menu.Item header href="/">Simplon Playground</Menu.Item>
+        <Menu.Item href="/articles/new">Nouvel article</Menu.Item>
         <Menu.Item
           href="/githubsearch"
           name='Github Search'/>

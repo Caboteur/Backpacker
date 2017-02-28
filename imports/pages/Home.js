@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {Button} from 'semantic-ui-react';
  export default class Home extends Component {
 
    constructor(){
@@ -29,8 +29,24 @@ import React, {Component} from 'react';
      })
    }
 
-   saveArticle(){
-     
+   handleRemove(e){
+     console.log(e.target.name)
+     Meteor.call('removeArticle', e.target.name, (err, res)=>{
+       if(err){
+         Bert.alert({
+           title: "Erreur",
+           message: err.message,
+           type: 'danger'
+         });
+       } else {
+         Bert.alert({
+           title: "Bravo",
+           message: "Votre article a été supprimé",
+           type: 'success'
+         });
+         this.getArticles();
+       }
+     })
    }
 
    getArticles(){
@@ -42,7 +58,7 @@ import React, {Component} from 'react';
            type: 'danger'
          });
        } else {
-         this.setState({articles: res})
+         this.setState({articles: res.reverse()})
        }
      });
    }
@@ -56,6 +72,10 @@ import React, {Component} from 'react';
             <div key={article._id}>
               <h1>{article.title}</h1>
               <p>{article.description}</p>
+              <Button
+                name={article._id}
+                content="Supprimer"
+                onClick={this.handleRemove.bind(this)}/>
             </div>
           )
         } )}
