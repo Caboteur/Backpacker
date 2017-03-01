@@ -10,7 +10,7 @@ const MainMenu = () => {
         <Menu.Item
           href="/githubsearch"
           name='Github Search'/>
-        <Menu.Item><LoginButtons/></Menu.Item>
+        <Menu.Item position="right"><LoginButtons align="right"/></Menu.Item>
     </Menu>
   )
 }

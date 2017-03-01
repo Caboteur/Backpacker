@@ -10,7 +10,7 @@ export default class Search extends Component {
 
   render(){
     return(
-      <Input fluid icon='search' placeholder={this.props.placeholder} onChange={this.handleChange.bind(this)}/>
+      <Input loading={this.props.loading} fluid icon='search' placeholder={this.props.placeholder} onChange={this.handleChange.bind(this)}/>
     );
   }
 }

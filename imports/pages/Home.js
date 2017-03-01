@@ -73,6 +73,9 @@ import {Button} from 'semantic-ui-react';
               <h1>{article.title}</h1>
               <p>{article.description}</p>
               <Button
+                size="mini"
+                icon="delete"
+                color="red"
                 name={article._id}
                 content="Supprimer"
                 onClick={this.handleRemove.bind(this)}/>

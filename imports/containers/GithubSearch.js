@@ -13,14 +13,16 @@ export default class GithubSearch extends Component {
     this.state = {
       term: 'meteor',
       data: [],
+      loading: true
     }
   }
 
   getData(term){
+    this.setState({loading: true});
     const root = 'https://api.github.com/search/repositories?q=';
     axios.get(root + term)
     .then((response) => {
-      this.setState({data: response.data.items});
+      this.setState({data: response.data.items, loading: false});
     })
     .catch((error) => {
       console.log(error);
@@ -49,9 +51,9 @@ export default class GithubSearch extends Component {
       <div>
         <Segment>
           <h1> Je suis le composant Githubsearch</h1>
-          <Search placeholder="Chercher un repo sur github" searchTerm={debouncedSearch} />
+          <Search loading={this.state.loading} placeholder="Chercher un repo sur github" searchTerm={debouncedSearch} />
         </Segment>
-        <Segment>
+        <Segment loading={this.state.loading}>
           <Card.Group itemsPerRow={4}>
           {results}
           </Card.Group>
