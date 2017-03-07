@@ -3,7 +3,7 @@ import { Segment, Grid } from 'semantic-ui-react'
 
 import MainMenu from '../components/MainMenu.js';
 
- export const MainLayout = ({ content }) => (
+ const MainLayout = ({ content }) => (
 
    <div className="main-layout">
     <MainMenu />
@@ -12,3 +12,5 @@ import MainMenu from '../components/MainMenu.js';
      </div>
    </div>
  );
+
+export default MainLayout;

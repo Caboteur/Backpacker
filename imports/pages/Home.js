@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Button} from 'semantic-ui-react';
+
  export default class Home extends Component {
 
    constructor(){
@@ -64,13 +65,12 @@ import {Button} from 'semantic-ui-react';
    }
 
    render(){
-     console.log(this.state.articles);
      return (
        <div className="">
         {this.state.articles.map( (article)=> {
           return (
             <div key={article._id}>
-              <h1>{article.title}</h1>
+              <a href={'/articles/' + article.title}><h1>{article.title}</h1></a>
               <p>{article.description}</p>
               <Button
                 size="mini"

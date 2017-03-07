@@ -1,17 +1,25 @@
-
 const Articles = new Mongo.Collection("articles");
 
 Meteor.methods({
   listeArticles: ()=>{
     // throw new Meteor.Error(500, "Désolé nous n'avons pas réussi à récupérer les articles");
-    console.log(Meteor.user());
     return Articles.find().fetch();
   },
-  getArticle: (id)=>{
-    return Articles.findOne({_id: id});
+  getArticle: (titre)=>{
+    return Articles.findOne({title: titre});
   },
   saveArticle: (obj)=> {
-    Articles.insert(obj)
+    if(Meteor.userId()){
+      if(obj.title.length <=1){
+        throw new Meteor.Error("Le titre est obligatoire");
+      } else if(obj.description.length <= 10){
+        throw new Meteor.Error("La description doit faire 10 caractères au minimum");
+      }
+      Articles.insert(obj);
+    } else {
+      throw new Meteor.Error("Il faut être connecté pour enregistrer un article");
+    }
+
 
   },
   removeArticle(id){

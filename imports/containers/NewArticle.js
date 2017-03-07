@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
-import {Form} from 'semantic-ui-react';
+import {Form, Segment} from 'semantic-ui-react';
+import {markdown} from 'markdown';
 
 export default class NewArticle extends Component {
   constructor(){
     super();
     this.state= {
-      title: "",
-      description: ""
     };
+  }
+
+  componentDidMount(){
+    var titre = "Je suis un titre";
+    console.log( markdown.toHTML("# Gros titre \n## Un second titre \n Un paragraphe \n[Je suis un lien](http://google.fr)" ) );
   }
 
   handleChange(e){
@@ -15,6 +19,7 @@ export default class NewArticle extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+    this.setState({html: markdown.toHTML(this.state.description)})
   }
 
   handleSave(e){
@@ -23,7 +28,7 @@ export default class NewArticle extends Component {
       if(err){
         Bert.alert({
           title:"Désolé",
-          message: "Votre article n'a pas pu être enregistré",
+          message: err.error,
           type: 'danger'
         });
       } else {
@@ -38,7 +43,9 @@ export default class NewArticle extends Component {
   }
 
   render(){
+    console.log(this.state.html)
     return(
+      <div>
       <Form>
         <Form.Input
           name="title"
@@ -57,6 +64,9 @@ export default class NewArticle extends Component {
           <Form.Button content="Annuler" negative />
         </Form.Group>
       </Form>
+      <Segment dangerouslySetInnerHTML={ {__html: this.state.html} }>
+      </Segment>
+      </div>
     );
   }
 }
