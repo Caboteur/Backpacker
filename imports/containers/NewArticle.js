@@ -19,7 +19,14 @@ export default class NewArticle extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
-    this.setState({html: markdown.toHTML(this.state.description)})
+    if(e.target.name=='description'){
+      this.setState({html: markdown.toHTML(e.target.value)})
+    }
+  }
+
+  handleCancel(e){
+    e.preventDefault();
+    FlowRouter.go('/');
   }
 
   handleSave(e){
@@ -61,7 +68,7 @@ export default class NewArticle extends Component {
           placeholder='Contenu de votre article...'/>
         <Form.Group>
           <Form.Button onClick={this.handleSave.bind(this)} content="Enregistrer" positive />
-          <Form.Button content="Annuler" negative />
+          <Form.Button onClick={this.handleCancel.bind(this)} content="Annuler" negative />
         </Form.Group>
       </Form>
       <Segment dangerouslySetInnerHTML={ {__html: this.state.html} }>

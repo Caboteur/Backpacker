@@ -5,6 +5,7 @@ import {mount} from 'react-mounter';
 
 import MainLayout from '../layouts/MainLayout.js';
 import Home from '../pages/Home.js';
+import LoginForm from '../containers/LoginForm.js'
 import GithubSearch from '../containers/GithubSearch.js'
 import NewArticle from '../containers/NewArticle.js';
 import Article from '../components/Article.js';
@@ -13,6 +14,13 @@ FlowRouter.route('/', {
   name: 'home',
   action: function () {
     mount(MainLayout, { content: <Home /> });
+  },
+});
+
+FlowRouter.route('/login', {
+  name: 'home',
+  action: function () {
+    mount(MainLayout, { content: <LoginForm /> });
   },
 });
 
