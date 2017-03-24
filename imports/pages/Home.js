@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import {createContainer} from 'meteor/react-meteor-data';
+
 import {Button} from 'semantic-ui-react';
 
- export default class Home extends Component {
+class HomeReact extends Component {
 
    constructor(){
      super()
@@ -65,6 +67,19 @@ import {Button} from 'semantic-ui-react';
    }
 
    render(){
+
+     const RemoveButton = (id) => {
+       if(this.props.loggedin){
+         return (<Button
+           size="mini"
+           icon="delete"
+           color="red"
+           name={id}
+           content="Supprimer"
+           onClick={this.handleRemove.bind(this)}/>)
+       }
+     }
+
      return (
        <div className="">
         {this.state.articles.map( (article)=> {
@@ -72,13 +87,7 @@ import {Button} from 'semantic-ui-react';
             <div key={article._id}>
               <a href={'/articles/' + article.title}><h1>{article.title}</h1></a>
               <p>{article.description}</p>
-              <Button
-                size="mini"
-                icon="delete"
-                color="red"
-                name={article._id}
-                content="Supprimer"
-                onClick={this.handleRemove.bind(this)}/>
+              {RemoveButton(article._id)}
             </div>
           )
         } )}
@@ -86,3 +95,11 @@ import {Button} from 'semantic-ui-react';
      );
    }
  }
+
+ var Home = createContainer( ()=>{
+   return {
+     loggedin: Meteor.userId()
+   };
+ } , HomeReact );
+
+ export default Home;

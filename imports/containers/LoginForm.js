@@ -9,7 +9,8 @@ export default class LoginForm extends Component {
     super();
     this.state={
       email: "",
-      pass: ""
+      pass: "",
+      loggedin: Meteor.userId()
     };
   }
 
@@ -22,7 +23,20 @@ export default class LoginForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    UserInfo.login(this.state.email, this.state.pass)
+    Meteor.loginWithPassword(this.state.email, this.state.pass, (err) => {
+      if(err){
+        Bert.alert({
+          message: err.reason,
+          type:'danger'
+        });
+      } else {
+        Bert.alert({
+          message: "Vous êtes connecté",
+          type: 'success'
+        });
+        FlowRouter.go('/');
+      }
+    });
   }
 
   render(){
