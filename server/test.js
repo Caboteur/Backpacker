@@ -24,6 +24,15 @@ Meteor.methods({
   },
   removeArticle(id){
     Articles.remove(id);
+  },
+  userInfo(id){
+    const result = Meteor.users.findOne({_id: id});
+    if(result){
+      console.log(result);
+      return result;
+    } else {
+      throw new Meteor.Error(500, 'Utilisateur non trouvé')
+    }
   }
 
 });

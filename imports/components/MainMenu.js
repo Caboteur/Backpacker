@@ -4,6 +4,8 @@ import {createContainer} from 'meteor/react-meteor-data'
 import { Icon, Menu } from 'semantic-ui-react'
 import { LoginButtons } from 'meteor/okgrow:accounts-ui-react'
 
+import userStore from '../store/user.js'
+
 class MainMenuReact extends Component {
 
   NewArticle(){
@@ -15,7 +17,7 @@ class MainMenuReact extends Component {
   }
 
   logout(){
-    Meteor.logout((err)=>{
+    userStore.logout((err)=>{
       if(err){
         Bert.alert({
           title:"Erreur réseau ",
@@ -57,7 +59,7 @@ class MainMenuReact extends Component {
 
 const MainMenu = createContainer( ()=>{
   return {
-    loggedin: Meteor.userId()
+    loggedin: userStore.loggedin.get()
   };
 } , MainMenuReact);
 

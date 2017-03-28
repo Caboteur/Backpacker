@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Form, Button } from 'semantic-ui-react';
 
+import userStore from '../store/user.js'
 import UserInfo from '../API/UserInfo.js'
 
 export default class LoginForm extends Component {
@@ -23,12 +24,12 @@ export default class LoginForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    Meteor.loginWithPassword(this.state.email, this.state.pass, (err) => {
+    userStore.login(this.state.email, this.state.pass, (err)=>{
       if(err){
         Bert.alert({
-          message: err.reason,
-          type:'danger'
-        });
+          message: err.message,
+          type: 'danger'
+        })
       } else {
         Bert.alert({
           message: "Vous êtes connecté",
@@ -36,7 +37,7 @@ export default class LoginForm extends Component {
         });
         FlowRouter.go('/');
       }
-    });
+    })
   }
 
   render(){

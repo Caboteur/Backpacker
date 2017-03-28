@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {createContainer} from 'meteor/react-meteor-data';
 
-import {Button} from 'semantic-ui-react';
+import {Button, Grid, Card, Image, Icon} from 'semantic-ui-react';
+import userStore from '../store/user.js'
 
 class HomeReact extends Component {
 
@@ -67,7 +68,7 @@ class HomeReact extends Component {
    }
 
    render(){
-
+     console.log(this.props.user)
      const RemoveButton = (id) => {
        if(this.props.loggedin){
          return (<Button
@@ -80,26 +81,59 @@ class HomeReact extends Component {
        }
      }
 
-     return (
-       <div className="">
-        {this.state.articles.map( (article)=> {
-          return (
-            <div key={article._id}>
-              <a href={'/articles/' + article.title}><h1>{article.title}</h1></a>
-              <p>{article.description}</p>
-              {RemoveButton(article._id)}
-            </div>
+     const userMail = ()=>{
+       if(this.props.user.emails){
+         return this.props.user.emails[0].address
+       } else {
+         return 'chargement...'
+       }
+     };
+
+     const colGauche = ()=> {
+       if(this.props.loggedin){
+         return (
+           <Grid.Column width={4}>
+             <Card>
+               <Image src='http://react.semantic-ui.com/assets/images/avatar/large/matthew.png' />
+               <Card.Content>
+                 <Card.Header>
+                   {userMail()}
+                 </Card.Header>
+               </Card.Content>
+              </Card>
+            </Grid.Column>
           )
-        } )}
-       </div>
+       }
+     };
+
+     return (
+       <Grid>
+        {colGauche()}
+        <Grid.Column width={this.props.loggedin ? 12 : 16}>
+        <div className="">
+         {this.state.articles.map( (article)=> {
+           return (
+             <div key={article._id}>
+               <a href={'/articles/' + article.title}><h1>{article.title}</h1></a>
+               <p>{article.description}</p>
+               {RemoveButton(article._id)}
+             </div>
+           )
+         } )}
+        </div>
+        </Grid.Column>
+       </Grid>
      );
    }
  }
 
  var Home = createContainer( ()=>{
    return {
-     loggedin: Meteor.userId()
+     loggedin: userStore.loggedin.get(),
+     user: userStore.user.get()
    };
  } , HomeReact );
+
+ console.log(userStore);
 
  export default Home;
