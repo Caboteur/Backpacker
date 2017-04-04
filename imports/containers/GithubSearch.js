@@ -1,46 +1,50 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+import {createContainer} from 'meteor/react-meteor-data'
+
 import _ from 'lodash';
 import {Card, Segment} from 'semantic-ui-react';
 
 import Search from '../components/Search.js';
 import RepoCard from '../components/RepoCard.js';
 
-export default class GithubSearch extends Component {
+import github from '../store/github.js'
+
+class GithubSearchReact extends Component {
 
   constructor(){
     super();
     this.state = {
       term: 'meteor',
-      data: [],
-      loading: true
+      loading: false
     }
   }
 
   getData(term){
     this.setState({loading: true});
-    const root = 'https://api.github.com/search/repositories?q=';
-    axios.get(root + term)
-    .then((response) => {
-      this.setState({data: response.data.items, loading: false});
+    github.getData(term, (e)=>{
+      if(e){
+        this.setState({loading: false});
+        console.log(e)
+      } else {
+        this.setState({loading: false});
+      }
     })
-    .catch((error) => {
-      console.log(error);
-    });
   }
 
   componentWillMount(){
-    this.getData(this.state.term);
+    if(!this.props.results.length > 0){
+      this.getData(this.state.term);
+    }
   }
 
 
   render(){
 
-    const list = this.state.data.map( (element) => {
+    const list = this.props.results.map( (element) => {
       return (<RepoCard key={element.id} data={element} />)
     } );
 
-    const results = this.state.data.length > 0 ? list : <h1>Pas de data</h1>
+    const results = this.props.results.length > 0 ? list : <h1>Pas de data</h1>
 
     const debouncedSearch = _.debounce((term)=> {
       console.log(term);
@@ -62,3 +66,11 @@ export default class GithubSearch extends Component {
     );
   }
 }
+
+const GithubSearch = createContainer( ()=>{
+  return {
+    results: github.results.get()
+  };
+} , GithubSearchReact);
+
+export default GithubSearch
