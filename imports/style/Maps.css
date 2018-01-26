@@ -1,0 +1,47 @@
+.map{
+width:70%;
+margin: auto;
+}
+.mapboxgl-map{
+  width: 100%;
+  height: 800px;
+  margin: auto;
+}
+
+.mapboxgl-popup {
+
+max-width: 400px;
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+cursor: pointer;
+background-color: white;
+    }
+
+.mapboxgl-canvas{
+  margin: auto;
+  width: 60%;
+  height:700px;
+}
+
+.map-title{
+font-family: 'Archivo Black', sans-serif;
+font-size: 70px;
+color:#759e90;
+margin-bottom: 55px;
+position: sticky;
+top:-1px;
+background-color: white;
+z-index: 1;
+padding-top: 25px;
+}
+
+
+@media screen and (max-width: 1000px)  {
+
+  .mapboxgl-map{
+    width: 100%;
+    height: 300px;
+    margin: auto;
+  }
+
+}

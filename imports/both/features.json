@@ -1,0 +1,121 @@
+
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Aéropport de Perpignan",
+        "description": "Un décor commun pour les premières et les dernières images dans le Roussillon."
+      },
+      "geometry": {
+        "coordinates": [
+          2.868806,
+          42.741308
+        ],
+        "type": "Point"
+      },
+      "id": "5cbb32ad57dfc239d58c45db21855db1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lac des Bouillouses",
+        "description": "Un décor naturel à couper le souffle."
+      },
+      "geometry": {
+        "coordinates": [
+          1.997878,
+          42.569909
+        ],
+        "type": "Point"
+      },
+      "id": "8400e89c0dc2c37aee8c4b20084b81f5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "vigne Catalane",
+        "description": "Cet environnement de qualité permet de mettre en valeur les paysages catalans."
+      },
+      "geometry": {
+        "coordinates": [
+          2.703485,
+          42.516035
+        ],
+        "type": "Point"
+      },
+      "id": "8d58121c3782b4e19df7aea762b71665"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": " Le Clos de la Treille",
+        "description": "Le lieu va être totalement réaménagé au premier trimestre 2018 pour créer le décor principal du film."
+      },
+      "geometry": {
+        "coordinates": [
+          3.126371,
+          42.48897
+        ],
+        "type": "Point"
+      },
+      "id": "address.13322977488799280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Palais des rois de Majorque",
+        "description": "L’occasion de mettre en avant ce joyau de l’architecture catalane."
+      },
+      "geometry": {
+        "coordinates": [
+          2.896054,
+          42.693871
+        ],
+        "type": "Point"
+      },
+      "id": "e13e53ec8405e6dfb85fd7696f79f6f0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Plage de Canet",
+        "description": "La saison estivale est mise en avant ."
+      },
+      "geometry": {
+        "coordinates": [
+          3.034439,
+          42.671058
+        ],
+        "type": "Point"
+      },
+      "id": "f65c40eb17c00d2adc8cf623cd869756"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Village et château de Castelnou",
+        "description": "Un petit village fortifié dont les ruelles offrent un décor exceptionnel."
+      },
+      "geometry": {
+        "coordinates": [
+          2.70278,
+          42.61972
+        ],
+        "type": "Point"
+      },
+      "id": "place.11138824915892740"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Port et vieux village de Collioure",
+        "description": "Un décor mythique qui mérite des images de qualité."
+      },
+      "geometry": {
+        "coordinates": [
+          3.08083,
+          42.52556
+        ],
+        "type": "Point"
+      },
+      "id": "place.15032719243498020"
+    }

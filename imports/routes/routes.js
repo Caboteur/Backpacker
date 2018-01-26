@@ -1,52 +1,65 @@
-
 import React, { Component } from 'react';
-import {FlowRouter} from 'meteor/kadira:flow-router-ssr';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 import {mount} from 'react-mounter';
 
-import MainLayout from '../layouts/MainLayout.js';
-import Home from '../pages/Home.js';
-import LoginForm from '../containers/LoginForm.js'
-import GithubSearch from '../containers/GithubSearch.js'
-import NewArticle from '../containers/NewArticle.js';
-import Article from '../components/Article.js';
+import Actualites from '../components/Actualites.js';
+import Profile from '../components/Profile.js';
+import Admin from '../containers/admin.js';
+import Slide from '../containers/Slide.js';
+import Connection from '../containers/Connection.js';
+import MainArticle from '../components/MainArticle.js';
 
-import menu from '../store/menu.js'
+import Welcome from '../containers/Welcome.js'
 
-FlowRouter.route('/', {
+import Mainlayout from '../layouts/Mainlayout.js';
+import Welcomelayout from '../layouts/Welcomelayout.js';
+
+FlowRouter.route('/Actualites', {
   name: 'home',
   action: function () {
-    menu.activeMenu.set('home');
-    mount(MainLayout, { content: <Home /> });
+    mount(Mainlayout, { content: <Actualites /> });
   },
 });
 
-FlowRouter.route('/login', {
-  name: 'home',
+
+FlowRouter.route('/Admin', {
+  name: 'Admin',
   action: function () {
-    menu.activeMenu.set('login');
-    mount(MainLayout, { content: <LoginForm /> });
+    mount(Mainlayout, { content: <Admin /> });
   },
 });
 
-FlowRouter.route('/articles/new', {
-  name: 'home',
+FlowRouter.route('/Profile', {
+  name: 'Profile',
   action: function () {
-    menu.activeMenu.set('articleNew');
-    mount(MainLayout, { content: <NewArticle /> });
+    mount(Mainlayout, { content: <Profile /> });
   },
 });
 
-FlowRouter.route('/articles/:titre', {
-  name: 'home',
-  action: function (params) {
-    mount(MainLayout, { content: <Article titre={params.titre}/> });
+FlowRouter.route('/Slide', {
+  name: 'Slide',
+  action: function () {
+    mount(Mainlayout, { content: <Slide /> });
   },
 });
 
-FlowRouter.route('/githubsearch', {
-  name: 'githubsearch',
+FlowRouter.route('/Connection', {
+  name: 'Connection',
   action: function () {
-    menu.activeMenu.set('githubSearch');
-    mount(MainLayout, { content: <GithubSearch /> });
+    mount(Mainlayout, { content: <Connection /> });
+  },
+});
+
+FlowRouter.route('/Welcome', {
+  name: 'Welcome',
+  action: function () {
+    mount(Welcomelayout, { content: <Welcome /> });
+  },
+});
+
+FlowRouter.route('/MainArticle', {
+  name: 'Main',
+  action: function () {
+    mount(Mainlayout, { content: <MainArticle /> });
   },
 });

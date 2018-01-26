@@ -1,16 +1,24 @@
 import React from 'react';
-import { Segment, Grid } from 'semantic-ui-react'
 
-import MainMenu from '../components/MainMenu.js';
-import UserInfo from '../API/UserInfo.js'
 
- const MainLayout = ({ content }) => (
+import Menu from '../components/Menu.js';
+import styles from '../layouts/Mainlayout.css';
+
+
+
+
+ const Mainlayout = ({ content }) => (
+
      <div className="main-layout">
-      <MainMenu loggedin={UserInfo.loggedIn}/>
-       <div id="content" className="ui container">
-           {content}
-       </div>
+      <Menu />
+      <a href="https://m.me/Ad-Blanchot">  <img className="msslogo" src='/image/msslogo.svg' />
+
+               </a>
+      {content}
+
+
      </div>
+
  );
 
-export default MainLayout;
+export default Mainlayout;

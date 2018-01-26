@@ -1,0 +1,158 @@
+
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto|Spectral');
+@import url('https://fonts.googleapis.com/css?family=Unica+One');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+
+
+.div-img{
+width:100%;
+max-height:200px;
+font-family: 'Playfair Display', serif;
+}
+
+.article-img{
+width:100%;
+max-height:200px;
+}
+
+.article-title{
+margin-left: 10px;
+font-size: 20px;
+}
+
+.article-title p{
+max-width:770px;
+font-family: 'Archivo Black', sans-serif;
+color:#759e90;
+}
+
+.article-description{
+width:70%;
+font-size: 10px;
+margin-left:10px;
+margin-top: 15px;
+}
+.article-description p{
+font-family: 'Unica One', cursive;
+}
+
+
+.article-container{
+width: 100%;
+max-height: 100%;
+margin: auto;
+margin-bottom: 150px;
+background-color: rgba(250 , 250 ,250 , 0.3)
+}
+
+.border-1{
+height: 2px;
+width: 40%;
+background-color: #677EAE;
+}
+
+.border{
+height: 2px;
+width: 20%;
+background-color: #677EAE;
+}
+
+.item{
+width: 90%;
+max-height: 700px;
+margin:auto;
+cursor: pointer;
+margin-top: 10px;
+}
+
+.item-second{
+width: 900px;
+height: 716px;
+margin:auto;
+}
+.article-date{
+float: right;
+margin-bottom: 3px;
+font-size: 14px;
+}
+
+.article-container h1{
+font-family: 'Archivo Black', sans-serif;
+font-size: 70px;
+color:#fbbd08;
+margin-bottom: 55px;
+position: sticky;
+top:-1px;
+background-color: white;
+padding-top: 25px;
+}
+
+
+
+
+@media screen and (min-width: 700px)  {
+
+
+  .div-img{
+  max-width:800px;
+  max-height:400px;
+
+  }
+
+  .article-img{
+  max-width:450px;
+  max-height:400px;
+  }
+
+
+
+  .article-title{
+  margin-left: 10px;
+  font-size: 40px;
+ text-transform: uppercase;
+ font-family: 'Playfair Display', serif;
+  }
+
+  .article-description{
+  font-size: 17px;
+  margin-top: 15px;
+  }
+
+  .article-container{
+  width: 100%;
+  max-height: 100%;
+  margin: auto;
+  margin-top:35%;
+  background-color: white;
+  }
+
+  .border{
+  height: 2px;
+  width: 20%;
+  }
+  .border-1{
+  height: 2px;
+  width: 40%;
+  background-color: #677EAE;
+  }
+
+  .item{
+  max-width: 450px;
+  max-height: 716px;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+.plus-btn{
+
+  margin-left: 45%!important;
+
+}
+.plus-btn :hover{
+
+  background-color: white!important;
+
+}
+
+
+};

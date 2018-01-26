@@ -27,4 +27,5 @@ accounts-password
 accounts-github
 okgrow:accounts-ui-react
 github-config-ui
+kadira:flow-router
 react-meteor-data

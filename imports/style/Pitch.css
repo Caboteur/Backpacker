@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab|Ultra');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+
+@font-face {
+ font-family: "ARCHER";
+ src: url("/fonts/ARCHER.ttf");
+
+}
+
+
+.text p{
+font-family: 'Bungee Shade', cursive;
+color: #fbbd08;
+margin: auto;
+font-size: 40px;
+font-weight: bold;
+background-color: #ffffff61;
+}
+
+
+@media screen and (max-width: 1000px)  {
+.pitch-div{
+height: 100%;
+width:100%;
+color: #677EAE;
+}
+
+.text{
+
+height: 100%;
+width:100%;
+color: #677EAE;
+font-size:15px;
+
+}
+
+
+.trait-fin{
+width: 30%;
+height: 2px;
+background-color: #677EAE;
+margin-bottom: 10px;
+}
+
+}
+
+@media screen and (min-width: 1500px)  {
+
+
+  .pitch-div{
+  height: 100%;
+  width:50%;
+  margin: auto;
+  }
+
+  .text{
+
+  height: 100%;
+  width:100%;
+  color: #677EAE;
+
+  font-size:22px;
+  margin-left: 15px;
+  }
+
+
+  .trait-fin{
+  width: 30%;
+  height: 2px;
+  background-color:#677EAE;;
+  margin-bottom: 10px;
+  }
+
+  .ok{
+  width: 30px;
+  height:30px;
+
+
+  }
+
+  p.Entete{
+  font-size:35px;
+  color: red;
+  display: inline;
+  margin-right: 10px;
+  }
+
+  .Entete-2{
+  font-size:25px;
+
+  }
+
+
+
+  }
+
+
+  @media screen and (min-width: 1000px)  {
+
+
+    .pitch-div{
+    height: 100%;
+    width:50%;
+    color: #677EAE;
+    }
+
+    .text{
+
+    height: 100%;
+    width:100%;
+    color: #677EAE;
+    font-size:28x;
+    margin-left: 10px;
+    }
+
+
+    .trait-fin{
+    width: 30%;
+    height: 2px;
+    background-color:#677EAE;;
+    margin-bottom: 10px;
+    }
+
+    .ok{
+    width: 30px;
+    height:30px;
+   }
+
+    p.Entete{
+    font-family: 'Blockbuster';
+    font-size:25px;
+    font-weight: bold;
+    color:#769E90;
+    display: inline;
+    margin-right: 10px;
+
+    }
+
+    .Entete-2{
+    font-size:27px;
+    color:#769E90;
+    display: inline;
+    margin-right: 10px;
+    }
+
+
+    }

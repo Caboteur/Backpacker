@@ -1,25 +1,31 @@
 {
-  "name": "playground",
+  "name": "NewProjet",
   "private": true,
   "scripts": {
     "start": "meteor run"
   },
   "dependencies": {
-    "axios": "^0.15.3",
-    "babel-runtime": "6.18.0",
-    "bcrypt": "^1.0.2",
-    "classnames": "^2.2.5",
-    "i": "^0.3.5",
+    "animate.css": "^3.5.2",
+    "babel-runtime": "^6.20.0",
+    "create-react-class": "^15.6.2",
+    "google-map-react": "^0.27.0",
     "lodash": "^4.17.4",
+    "mapbox-gl": "^0.43.0",
     "markdown": "^0.5.0",
-    "meteor-node-stubs": "~0.2.0",
-    "npm": "^4.1.2",
-    "react": "^15.4.2",
-    "react-addons-pure-render-mixin": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "meteor-node-stubs": "~0.2.4",
+    "moment": "^2.20.1",
+    "react": "^15.6.2",
+    "react-addons-pure-render-mixin": "^15.6.2",
+    "react-bodymovin": "^1.1.1",
+    "react-classnames": "^0.1.2",
+    "react-dom": "^15.6.1",
+    "react-fullpage": "^0.1.18",
     "react-komposer": "^2.0.0",
+    "react-mapbox-gl": "^3.4.1",
+    "react-media": "^1.6.1",
+    "react-meteor-data": "^0.2.11",
     "react-mounter": "^1.2.0",
-    "semantic-ui-react": "^0.64.7",
-    "url": "^0.11.0"
+    "react-slick": "^0.16.0",
+    "semantic-ui-react": "^0.77.1"
   }
 }

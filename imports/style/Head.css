@@ -1,0 +1,73 @@
+.swipe{
+width: 30px;
+height: 30px;
+border-radius: 30px;
+background-color: blue;
+margin-top:200px;
+}
+
+.bloc{
+  display:none;
+  width:50%;
+  height:100%;
+  background-color: blue;
+  max-height: 447px;
+  background: url('/image/texture.svg');
+  background-size: cover;
+}
+
+
+
+.intro{
+  display:flex;
+  margin:auto;
+max-width: 80%;
+
+
+}
+
+
+@media screen and (max-width: 1500px)  {
+
+  .bloc{
+    display:none;
+    width:50%;
+    height:100%;
+    background-color: blue;
+    max-height: 447px;
+  }
+
+
+
+  .intro{
+    display:flex;
+    margin:auto;
+  max-width: 70%;
+
+  }
+
+
+
+
+
+}
+
+@media screen and (max-width: 1000px)  {
+
+  .bloc{
+  display: none;
+  }
+
+
+  .intro{
+  margin:auto;
+  width: 90%;
+  height:200px;
+
+  }
+
+
+
+
+
+}
