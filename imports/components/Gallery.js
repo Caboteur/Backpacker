@@ -39,6 +39,7 @@ export default class Gallery extends Component {
       <div className='wrapper'>
 
     <div className='box box1'>
+    <img src={this.state.pics[0].pics} />
     </div>
     <div className='box box2'>
     </div>
