@@ -8,18 +8,15 @@ import Admin from '../containers/admin.js';
 import Slide from '../containers/Slide.js';
 import Connection from '../containers/Connection.js';
 import MainArticle from '../components/MainArticle.js';
+import MainVideo from '../components/MainVideo.js';
+import MainProfile from '../containers/MainProfile.js';
 
 import Welcome from '../containers/Welcome.js'
+import MainActualites from '../containers/MainActualites.js';
 
-import Mainlayout from '../layouts/Mainlayout.js';
+import Secondlayout from '../layouts/SecondLayout.js';
+import Mainlayout from '../layouts/MainLayout.js';
 import Welcomelayout from '../layouts/Welcomelayout.js';
-
-FlowRouter.route('/Actualites', {
-  name: 'home',
-  action: function () {
-    mount(Mainlayout, { content: <Actualites /> });
-  },
-});
 
 
 FlowRouter.route('/Admin', {
@@ -29,10 +26,17 @@ FlowRouter.route('/Admin', {
   },
 });
 
-FlowRouter.route('/Profile', {
-  name: 'Profile',
+FlowRouter.route('/MainActualites', {
+  name: 'MainActualites',
   action: function () {
-    mount(Mainlayout, { content: <Profile /> });
+    mount(Secondlayout, { content: <MainActualites /> });
+  },
+});
+
+FlowRouter.route('/Fiche', {
+  name: 'Fiche',
+  action: function () {
+    mount(Secondlayout, { content: <MainProfile /> });
   },
 });
 
@@ -60,6 +64,13 @@ FlowRouter.route('/Welcome', {
 FlowRouter.route('/MainArticle', {
   name: 'Main',
   action: function () {
-    mount(Mainlayout, { content: <MainArticle /> });
+    mount(Secondlayout, { content: <MainArticle /> });
+  },
+});
+
+FlowRouter.route('/MainVideo', {
+  name: 'MainVideo',
+  action: function () {
+    mount(Secondlayout, { content: <MainVideo /> });
   },
 });

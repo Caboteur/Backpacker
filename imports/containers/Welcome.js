@@ -15,7 +15,7 @@ return (
 
 
 <div className="videoContainer">
-  <video autoPlay loop height="auto" width="100%" src="/image/motionLive.mov" className="fullscreen"> <Button className="entry-btn" secondary>Entrez sur le site</Button></video>
+  <video autoPlay loop height="auto" width="100%" src="/video/intro.mp4" className="fullscreen"> <Button className="entry-btn" secondary></Button></video>
 </div>
 
   </div>

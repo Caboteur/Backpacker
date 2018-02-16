@@ -17,7 +17,7 @@ import Anim from '../components/anim.js'
 import Gallery from '../components/Gallery.js';
 import styles from '../style/Slide.css';
 import Pitch from '../components/Pitch.js';
-
+import Video from '../components/Video.js';
 
 class Slide extends Component {
 
@@ -39,7 +39,10 @@ class Slide extends Component {
    });
  }
 
+ ChangePage () {
+   FlowRouter.go("/Welcome");
 
+ }
 
 
     render(){
@@ -77,31 +80,34 @@ class Slide extends Component {
           <div className="couv">
 
             <div className="head">
-            <h1 >BACKPACKER</h1>
-
-            <div className="border-2"></div>
-                <div className="trailer-btn" ><button className="btn draw-border">Regarder le trailer</button></div>
+            <h1>BACKPACKER</h1>
+                  <button onClick={this.ChangePage.bind(this)} className="btn btn--stripe">Regarder le trailer</button>
             </div>
             <Head />
             </div>
             </Section>
             </SectionsContainer>
             <div id="page-container" className="page-container">
-            <div className="resume-2"></div>
-            <div>
-            <div className="social-media"><a className="icon" href="https://www.facebook.com/"><img src='/image/fb-btn.svg'/></a>
-            <a className="icon" href="https://www.instagram.com/"><img src='/image/insta-btn.svg'/></a>
-            <a className="icon" href="https://twitter.com/"><img src='/image/twitt-btn.svg'/></a>
-            </div>
+            <div className="div-pitch">
             <Pitch />
+            </div>
+            <div className="page-content-fond">
+            <div className="page-content">
+            <div className="social-media"><a className="icon" href="https://www.facebook.com/"><img src='/image/fb-btn.svg'/></a>
+              <a className="icon" href="https://www.instagram.com/"><img src='/image/insta-btn.svg'/></a>
+              <a className="icon" href="https://twitter.com/"><img src='/image/twitt-btn.svg'/></a>
+              </div>
            <Actualites />
             <Profile />
+            <Video />
             <Gallery />
-              <Maps/>
+              <Maps />
               <FormReact />
+              </div>
+              </div>
                </div>
                </div>
-          </div>
+
         );
       }
     }

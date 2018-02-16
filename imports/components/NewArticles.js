@@ -16,18 +16,18 @@ export default class NewArticles extends Component {
 
   componentDidMount(){
     var titre = "Je suis un titre";
-    console.log( markdown.toHTML("# Gros titre \n## Un second titre \n Un paragraphe \n[Je suis un lien](http://google.fr)" ) );
+    
   }
 
   handleChange(e){
-    console.log(e.target.name);
+
     this.setState({
       [e.target.name]: e.target.value
     });
     if(e.target.name=='description'){
       this.setState({html: markdown.toHTML(e.target.value)})
     }
-    console.log(this.state)
+
   }
 
   handleCancel(e){
@@ -61,6 +61,7 @@ export default class NewArticles extends Component {
 
     return(
       <div>
+      <h1>Rédiger un nouvel article</h1>
       <Form>
         <Form.Input
           name="title"
@@ -84,11 +85,11 @@ export default class NewArticles extends Component {
 
           <Form.Button onClick={this.handleSave.bind(this)} content="Enregistrer" positive />
           <Form.Button onClick={this.handleCancel.bind(this)} content="Annuler" negative />
-          <li><input onChange={this.uploadFile} ref="file" className='filepicker' id="file" type="file"/></li>
+
         </Form.Group>
       </Form>
-      <Segment dangerouslySetInnerHTML={ {__html: this.state.html} }>
-      </Segment>
+
+
       </div>
     );
   }

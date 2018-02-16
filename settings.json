@@ -1,0 +1,8 @@
+{
+  "galaxy.meteor.com": {
+     "env": {
+       "MONGO_URL": "mongodb://adrienB:adrienB@ds237868.mlab.com:37868/backpa
+"
+     }
+   }
+}

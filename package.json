@@ -20,12 +20,15 @@
     "react-classnames": "^0.1.2",
     "react-dom": "^15.6.1",
     "react-fullpage": "^0.1.18",
+    "react-image-lightbox": "^4.5.0",
     "react-komposer": "^2.0.0",
     "react-mapbox-gl": "^3.4.1",
     "react-media": "^1.6.1",
     "react-meteor-data": "^0.2.11",
     "react-mounter": "^1.2.0",
+    "react-reveal": "^1.0.0",
     "react-slick": "^0.16.0",
+    "scrollreveal": "^3.3.6",
     "semantic-ui-react": "^0.77.1"
   }
 }

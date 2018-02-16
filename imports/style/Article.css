@@ -17,13 +17,16 @@ max-height:200px;
 
 .article-title{
 margin-left: 10px;
-font-size: 20px;
+font-size: 50px;
 }
 
 .article-title p{
-max-width:770px;
-font-family: 'Archivo Black', sans-serif;
-color:#759e90;
+padding-left: 8PX;
+max-width: 770px;
+font-family: 'Contrail One', cursive;
+color: white;
+box-shadow: 4PX 5PX 18px #d7d7d7;
+color: #fbbd0b;
 }
 
 .article-description{
@@ -42,7 +45,7 @@ width: 100%;
 max-height: 100%;
 margin: auto;
 margin-bottom: 150px;
-background-color: rgba(250 , 250 ,250 , 0.3)
+border-bottom: 3PX solid #0a9cb9;
 }
 
 .border-1{
@@ -58,7 +61,7 @@ background-color: #677EAE;
 }
 
 .item{
-width: 90%;
+width: 100%;
 max-height: 700px;
 margin:auto;
 cursor: pointer;
@@ -76,17 +79,73 @@ margin-bottom: 3px;
 font-size: 14px;
 }
 
-.article-container h1{
-font-family: 'Archivo Black', sans-serif;
-font-size: 70px;
+.categorie-title{
+font-size: 60px;
 color:#fbbd08;
 margin-bottom: 55px;
 position: sticky;
 top:-1px;
 background-color: white;
 padding-top: 25px;
+z-index: 1;
 }
 
+
+
+.btn {
+
+  overflow: visible;
+  margin: auto;
+  background: transparent;
+  font: inherit;
+  line-height: normal;
+  cursor: pointer;
+  -moz-user-select: text;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 36px 22px;
+  color: #fbbd07;
+  border: 2px solid #fbbd07 !important;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.btn::-moz-focus-inner {
+  padding: 0;
+
+}
+.btn--stripe {
+  overflow: hidden;
+  position: relative;
+}
+.btn--stripe:after {
+  content: '';
+  display: block;
+  height: 7px;
+  width: 100%;
+  background-image: repeating-linear-gradient(45deg, #fbbd07, #fbbd07 1px, transparent 2px, transparent 5px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-top: 1px solid #fbbd07;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-size: 7px 7px;
+}
+.btn--stripe:hover {
+ background-color: #fbbd07;;
+  color: #fff;
+  border-color: #000;
+}
+.btn--stripe:hover:after {
+  background-image: repeating-linear-gradient(45deg, #fff, #fff 1px, transparent 2px, transparent 5px);
+  border-top: 1px solid #fbbd07;
+  -webkit-animation: stripe-slide 12s infinite linear forwards;
+          animation: stripe-slide 12s infinite linear forwards;
+}
 
 
 
@@ -122,7 +181,6 @@ padding-top: 25px;
   width: 100%;
   max-height: 100%;
   margin: auto;
-  margin-top:35%;
   background-color: white;
   }
 

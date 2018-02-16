@@ -230,20 +230,23 @@ Img();
 
   render() {
     const { lng, lat, zoom } = this.state;
-    console.log(this.state.location);
+
 
     return (
+      <div>
+      <div id="Lieux" style={{height:"100px", textAlign:"center", boxShadow: '0px 5px 20px #0000002e'}} className="categorie-title">lieux de tournage<img style={{width:"70px", float:"right",marginTop: "-15px",
+    marginRight: "10px"}} src='/image-icon/carte.svg'/></div>
       <div className="map">
-      <h1 className="map-title">Lieux de tournage</h1>
         <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">
-          <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div><div>{point.get()}</div><div></div>
+
         </div>
 
         <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
         <div className="footer-decription">
-      <img className="img" src={point.get()}></img><div >{pointe.get()}</div>
+      <img className="map-img" src={point.get()}></img><div >{pointe.get()}</div>
         </div>
       </div>
+        </div>
     );
   }
 }

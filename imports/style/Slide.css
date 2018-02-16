@@ -6,8 +6,31 @@
 .social-media{
   position: sticky;
   z-index: 2;
-  top:-1px;
   padding-top: 25px;
+  border-bottom: 3px solid #0a9cb9;
+}
+
+.ytp-watch-later-icon{
+display: none;
+}
+
+.ytp-share-icon{
+display: none;
+}
+
+.ytp-title-link yt-uix-sessionlink{
+display: none;
+}
+
+.stripe{
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0) 10px,
+    rgba(253, 223, 121, 1) 5px,
+    rgba(253, 223, 121, 1) 15px
+  );
+  height: 900px;
 }
 
 .head{
@@ -25,12 +48,7 @@ font-size: 35px;
 color:white;
 }
 
-.border-2{
-background-color: white;
-margin: auto;
-width:30%;
-height: 2px;
-}
+
 
 .main-page{
 width:100%;
@@ -40,15 +58,27 @@ width:100%;
 width:100%;
 height: 100%;
 margin: auto;
-background: url("/image/travel-pattern.svg");
-background-size: container;
-background-repeat: no-repeat;
 }
 
-.page-container-2{
-max-width:80%;
-height: 100%;
+.div-pitch{
+  width:100%;
+  height: 800px;
+  margin: auto;
+  background: url("/image/travel-pattern3.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+ padding-top: 160PX;
+}
+
+.page-content{
+  width: 60%;
+background-color: white;
 margin: auto;
+height: 100%;
+margin-top: 60px;
+    border: 6px solid #0a9cb9;
+    box-shadow: 15PX -14px 0px #fde079;
+margin-bottom: 100px;
 }
 
 .resume{
@@ -56,7 +86,6 @@ width:100%;
 height:500px;
 background-color: green;
 background: url("/image/background.jpg");
-margin-top: 180px;
 }
 
 
@@ -146,7 +175,7 @@ margin-top: 140px;
 @media screen and (min-width: 1500px)  {
   .couv{
     height:100%;
-    background: url('/image/beach.svg');
+    background: url('/image/movieposter.png');
     background-size: cover;
   }
 
@@ -194,7 +223,7 @@ margin-top: 140px;
   }
 
   .couv{
-    background: url('/image/beach.svg');
+    background: url('/image/movieposter.png');
     background-size: cover;
     height:100%;
     margin-left:-25px;
@@ -216,11 +245,11 @@ margin-top: 140px;
 font-family: 'Monoton', cursive;
 font-size: 100px;
 color: #fbbd08;
-padding-top: 250px;
+padding-top: 15%;
 }
 
 .couv{
-  background: url('/image/beach.svg');
+  background: url('/image/movieposter.png');
   background-size: cover;
   height:100%;
 }

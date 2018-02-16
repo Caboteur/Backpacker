@@ -7,17 +7,18 @@ export default class NewProfiles extends Component {
     super();
     this.state= {
       type:"",
-      image:'/image/' + ""
+      image:'/image/' + "",
+      value:""
     };
   }
 
   componentDidMount(){
     var titre = "Je suis un titre";
-    console.log( markdown.toHTML("# Gros titre \n## Un second titre \n Un paragraphe \n[Je suis un lien](http://google.fr)" ) );
+  
   }
 
   handleChange(e){
-    console.log(e.target.value);
+
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -26,6 +27,10 @@ export default class NewProfiles extends Component {
     }
   }
 
+  handleChangeValue(e){
+ this.setState({value:e.target.value})
+
+  }
 
   handleCancel(e){
     e.preventDefault();
@@ -49,38 +54,40 @@ export default class NewProfiles extends Component {
         });
 
       }
-      console.log(this.state)
+
     });
   }
 
 
 test(e) {
-console.log(options.value)
+
 
 }
 
   render(){
 
-    const options = [
-      { key: 'm', text: 'Male', value:'Male'},
-      { key: 'f', text: 'Female', value:'Male'},
-    ]
-
     return(
       <div>
+        <h1>Créer un nouveau profile</h1>
       <Form>
         <Form.Input
           name="title"
           onChange={this.handleChange.bind(this)}
           value={this.state.title}
-          label='Titre'
-          placeholder='Saisissez un titre...'/>
+          label='Nom'
+          placeholder='Saisissez le nom...'/>
+          <Form.Input
+            name="fonction"
+            onChange={this.handleChange.bind(this)}
+            value={this.state.fonction}
+            label='Fonction'
+            placeholder='Saisissez la fonction...'/>
         <Form.TextArea
           name="description"
           onChange={this.handleChange.bind(this)}
           value={this.state.description}
           label='Description'
-          placeholder='Contenu de votre article...'/>
+          placeholder=''/>
           <Form.Group>
           <Form.Input
             name="image"
@@ -88,13 +95,16 @@ console.log(options.value)
             value={this.state.image}
             label='Image'
             placeholder='/image/persona.jpg'/>
-            <Form.Select label='Gender' options={options} placeholder='Gender' onChange={this.test.bind(this)} />
+            <Form.Field>
+      </Form.Field>
+
+
           <Form.Button onClick={this.handleSave.bind(this)} content="Enregistrer" positive />
           <Form.Button onClick={this.handleCancel.bind(this)} content="Annuler" negative />
         </Form.Group>
       </Form>
-      <Segment dangerouslySetInnerHTML={ {__html: this.state.html} }>
-      </Segment>
+
+
       </div>
     );
   }

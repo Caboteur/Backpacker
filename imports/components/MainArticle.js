@@ -8,23 +8,26 @@ import {withTracker} from 'meteor/react-meteor-data';
 
  class MainArticleReact extends Component {
 
+   ChangePage () {
+     FlowRouter.go("/Slide");
+   }
 
   render() {
     const article = () => {if(this.props.mainArticle.get()== undefined){
-      console.log('nul')
+
     }else{
       const def =this.props.mainArticle.get();
        return (
-         <div  key={def._id} className="item" >
-             <div className="div-img">
-              <img className="article-img" src={def.image} />
+         <div  key={def._id} style={{width:'55%', margin:'auto', marginTop: '20px'}}>
+             <div style={{maxWidth:'690px'}}>
+              <img src={def.image} />
               </div>
-              <div className="article-title"><p >{def.title}</p></div>
-              <div className="border-1"></div>
-              <p className="article-description">{def.description}</p>
+              <div className="article-title" style={{marginTop:'40PX', fontSize: '17px', fontSize: '35px'}}><p >{def.title}</p></div>
+              <p style={{width:'100%', margin:'auto',marginTop:'40PX', fontFamily: 'Josephin Slab', lineHeight:'2em' }}>{def.description}</p>
                <p className="article-date">{def.date}</p>
               <div className="border"></div>
              </div>
+
 
        )
     }
@@ -36,7 +39,7 @@ import {withTracker} from 'meteor/react-meteor-data';
       <div >
 
 {article()}
-
+          <button style={{marginTop:'70px'}}className="btn btn--stripe" onClick={this.ChangePage.bind(this)}>Accueil</button>
       </div>
     );
   }

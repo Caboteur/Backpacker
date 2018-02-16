@@ -19,7 +19,6 @@ caching-compiler@1.1.9
 caching-html-compiler@1.1.0
 callback-hook@1.0.10
 check@1.2.5
-chuangbo:cookie@1.1.0
 ddp@1.2.5
 ddp-client@1.2.9
 ddp-common@1.2.8
@@ -47,7 +46,6 @@ insecure@1.0.7
 jquery@1.11.10
 jsx@0.2.4
 kadira:flow-router@2.12.1
-kadira:flow-router-ssr@3.13.0
 launch-screen@1.0.12
 less@2.6.5
 livedata@1.0.18
@@ -55,10 +53,6 @@ localstorage@1.0.12
 logging@1.1.17
 meteor@1.6.1
 meteor-base@1.0.4
-meteorhacks:fast-render@2.14.0
-meteorhacks:inject-data@2.0.0
-meteorhacks:meteorx@1.4.1
-meteorhacks:picker@1.0.3
 minifier-css@1.2.16
 minifier-js@1.2.17
 minimongo@1.0.20

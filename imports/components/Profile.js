@@ -3,7 +3,8 @@ import { Button, Grid, Card, Image, Icon} from 'semantic-ui-react'
 
 import Menu from '../components/Menu.js';
 import Media from 'react-media';
-
+import Slide  from 'react-reveal/Zoom';
+import Popup from '../components/Popup.js';
 import styles from '../style/Profile.css';
 
 export default class Profile extends Component {
@@ -14,6 +15,7 @@ export default class Profile extends Component {
         articles: [],
         stopcard: [],
         objet:"",
+        showPopup: false,
         num: 0
       };
     }
@@ -26,7 +28,7 @@ export default class Profile extends Component {
 
 
     handleRemove(e){
-      console.log(e.target.name)
+      
       Meteor.call('removeProfile', e.target.name, (err, res)=>{
         if(err){
           Bert.alert({
@@ -61,6 +63,11 @@ export default class Profile extends Component {
       });
     }
 
+    togglePopup(e) {
+      this.setState({
+        showPopup: !this.state.showPopup
+      });
+    }
 
     getCard (){
 
@@ -77,13 +84,13 @@ export default class Profile extends Component {
 
        if (i < this.state.articles.length-1) {
          const count = i + 1 ;
-         console.log(count);
+
 
          this.setState({num:count});
 
       }else {
         const count = 0 ;
-        console.log(count);
+
 
         this.setState({num:count});
 
@@ -106,12 +113,12 @@ export default class Profile extends Component {
 
              if(i > 0 ){
                const count = i - 1 ;
-               console.log(count);
+
 
                this.setState({num:count});
              }else {
                const count = this.state.articles.length-1 ;
-               console.log(count);
+
 
                this.setState({num:count});
 
@@ -121,11 +128,14 @@ export default class Profile extends Component {
     }
 
     ReturnArticle () {
-      const StopCard = this.state.articles.slice(0, 4);
-      console.log(StopCard)
+      const StopCard = this.state.articles.slice(0, 6);
+
       this.setState({stopcard: StopCard});
-      console.log(this.state.stopcard);
-      console.log(this.state.articles);
+
+    }
+
+    ChangeRoute() {
+     FlowRouter.go('/Fiche');
     }
 
     render(){
@@ -157,7 +167,6 @@ export default class Profile extends Component {
        const label = (props) => {
          if(this.state.objet == ""){
 
-          console.log("attends")
 
         } else {
 
@@ -172,35 +181,68 @@ export default class Profile extends Component {
 
 
         return (
+          <div className="Card-container">
 
 
 
-                     <div className="Card-container">
-                   <h1 className="card-title">Les acteurs</h1>
-                     <div className="card" key={this.state.objet._id}>
+                  <div id="equipe" style={{height:"100px", textAlign:"center", boxShadow: '0px 5px 20px #0000002e'}} className="categorie-title">l equipe<img style={{width:"50px", float:"right",marginTop: "-15px",
+                marginRight: "10px"}} src='/image-icon/cafe.svg'/></div>
 
-             <div className="card-circle">
-                   <img className="card-img" src="/image/persona.jpg" />
-             </div>
-               <div className="">
-                 <h1 className="card-h1">{this.state.objet.title}</h1>
-             </div>
+                  <div className="p">  </div>
 
-              <h3 className="card-h3">acteur</h3>
+                  <div className='div-card-container'>
 
-             <div className='trait'></div>
+                <Grid container columns={2}>
+
+                <Grid.Row>
+                {this.state.stopcard.map( (article)=> {
+                  const handle = () => {
+                   this.setState({objet: article.description});
+
+                   this.togglePopup();
+                 }
+                        return (
+               <Grid.Column>
+               <div className="profil-div" style={{marginBottom:'60px'}}>
+             <p className="para-title">{article.title}</p>
+              <img  onClick={ handle} className="card-img" src="/image/luisito.png" />
+              <p className="fonction-div">{article.fonction}</p>
+              <div>
+
+              <img style={{width:"50px"}} src='/image-icon/vimeo.svg'/>
+
+              </div>
+              {
+                this.state.showPopup ?
+
+             <Popup
+             text={this.state.objet}
+             closePopup={this.togglePopup.bind(this)} />
+
+          : null
+        }
+            </div>
+               </Grid.Column>
+
+
+             )
+
+               }
+               )
+               }
 
 
 
-             </div>
 
 
-            <div className="footer-profile">
-            <div className="arrow" onClick={this.getlessCard.bind(this)}></div>
-            <div className="add-span"><h1></h1></div>
-            <div className="arrow-2" onClick={this.getCard.bind(this)}></div>
-             </div>
-                 </div>
+
+        </Grid.Row>
+        </Grid>
+           <button style={{marginTop:'70px'}}className="btn btn--stripe" onClick={this.ChangeRoute.bind(this)}>Fiche technique</button>
+         </div>
+ </div>
+
+
 
 
 

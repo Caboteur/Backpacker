@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import Menu from '../components/Menu.js';
 import styles from '../layouts/Mainlayout.css';
 

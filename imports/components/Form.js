@@ -37,7 +37,7 @@ Meteor.call('sendEmail',this.state.Email, this.state.Name)
           <Form.Field id='form-input-control-last-name' color="green" control={Input}  name="Name" label='Last name' placeholder='Last name' value={this.state.Name} onChange={this.handleChange.bind(this)} />
         </Form.Group>
         <Form.Field id='form-textarea-control-opinion' color="green" control={TextArea} label='Opinion' placeholder='Opinion' />
-        <Form.Field id='form-button-control-public' color="blue" control={Button} content='Confirm' label='Label with htmlFor' onClick={this.sendMail.bind(this)} />
+        <Form.Field id='form-button-control-public' color="blue" control={Button} content='Confirm' onClick={this.sendMail.bind(this)} />
       </Form>
 
       </div>

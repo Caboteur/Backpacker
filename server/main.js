@@ -1,6 +1,7 @@
 const Articles = new Mongo.Collection("articles");
 const Profiles = new Mongo.Collection("profiles");
 const Pics = new Mongo.Collection("pictures");
+const Video = new Mongo.Collection("video");
 
 Meteor.methods({
   listeArticles: ()=>{
@@ -24,7 +25,7 @@ Meteor.methods({
     console.log("supprimé")
   },
   userInfo(id){
-    const result = Meteor.users.findOne({_id: id});
+    const result = Meteor.users.findOne({_id: id });
     if(result){
       console.log(result);
       return result;
@@ -83,6 +84,29 @@ Meteor.methods({
   },
   removePics:(id) => {
     Pics.remove(id);
+    console.log("supprimé")
+  },
+
+  listeVideo: ()=>{
+    console.log(Video.find().fetch())
+    return Video.find().fetch();
+
+  },
+  saveVideo: (obj)=> {
+
+      if(obj.length <=1){
+        throw new Meteor.Error("Mettez une video");
+      } else {
+
+        Video.insert(obj);
+        console.log(obj);
+      }
+
+
+
+  },
+  removeVideo:(id) => {
+    Video.remove(id);
     console.log("supprimé")
   },
 

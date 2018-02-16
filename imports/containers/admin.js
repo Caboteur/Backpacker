@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Button, Form, Segment, Icon } from 'semantic-ui-react';
 import NewProfiles from '../components/NewProfiles.js';
 import NewArticles from '../components/NewArticles.js';
-
+import NewVideo from '../components/NewVideo.js';
 
 export default class Admin extends Component {
 
@@ -29,6 +29,22 @@ constructor (){
 
   }
 
+  ChangePageSlide () {
+    FlowRouter.go("/Slide");
+  }
+
+  ChangePageActu () {
+    FlowRouter.go("/MainActualites");
+  }
+
+  ChangePageVideo () {
+    FlowRouter.go("/MainVideo");
+  }
+
+  ChangePageProfile () {
+    FlowRouter.go("/Fiche");
+  }
+
   handleSave(e){
     e.preventDefault();
     Meteor.call('savePics', this.state, (err, res)=> {
@@ -52,21 +68,27 @@ constructor (){
   render(){
 
     return(
-      <div>
+      <div style={{width:'80%', margin:'auto'}}>
 
-     <NewProfiles />
+     <NewProfiles  />
+      <Button  style={{marginTop:'15px'}} size="mini"color="yellow" content="Gerer fiche technique" onClick={this.ChangePageProfile.bind(this)} />
      <NewArticles />
-     <h1>Gallerie</h1>
+     <Button  style={{marginTop:'15px'}} size="mini"color="yellow" content="Gerer mes articles " onClick={this.ChangePageActu.bind(this)} />
+     <NewVideo />
+     <Button  style={{marginTop:'15px'}} size="mini"color="yellow" content="Gerer mes videos" onClick={this.ChangePageVideo.bind(this)} />
+     <div style={{width:'80%', margin:'auto'}}>
+     <h1>Nouvelle image</h1>
      <Form.Input
        name="pics"
        onChange={this.handleChange.bind(this)}
        value={this.state.pics}
        label='pics'
        placeholder='/image/persona.jpg'/>
-         <Form.Button onClick={this.handleSave.bind(this)} content="Enregistrer" positive />
-     <Button   size="mini"
-        color="green"
-        content="Aller sur mon site" href='/Slide' />
+         <Form.Button style={{marginTop:'15px'}} onClick={this.handleSave.bind(this)}  content="Enregistrer" positive />
+     <Button  style={{marginTop:'15px'}} size="mini"
+        color="yellow"
+        content="Aller sur mon site" onClick={this.ChangePageSlide.bind(this)}  />
+        </div>
       </div>
     );
   }

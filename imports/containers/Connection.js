@@ -15,7 +15,7 @@ export default class Connection extends Component {
 
 
       <Login />
-      <Inscription />
+
 
       </div>
     )
