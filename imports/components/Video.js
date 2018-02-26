@@ -52,7 +52,7 @@ export default class Video extends Component {
  <iframe style={{width:'100%', height:'500px',     border: '8px solid white'}} className="rapido" id="youfs" src={this.state.ListVideo} frameborder="0"></iframe>
    </div>
 
-           <button onClick={this.ChangePage.bind(this)} style={{marginTop:'70px', backgroundColor:'white'}}className="btn btn--stripe" >Video</button>
+           <button onClick={this.ChangePage.bind(this)} style={{marginTop:'70px'}}className="btn btn--stripe" >Video</button>
 
       </div>
 

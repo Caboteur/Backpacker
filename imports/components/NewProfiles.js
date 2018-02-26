@@ -8,13 +8,17 @@ export default class NewProfiles extends Component {
     this.state= {
       type:"",
       image:'/image/' + "",
-      value:""
+      value:"",
+      checkedvim: false,
+      linkvim:'',
+      checkedtwitt:false,
+      linktwitt:''
     };
   }
 
   componentDidMount(){
     var titre = "Je suis un titre";
-  
+
   }
 
   handleChange(e){
@@ -58,6 +62,15 @@ export default class NewProfiles extends Component {
     });
   }
 
+     togglevim () {
+       this.setState({ checkedvim: !this.state.checkedvim });
+       console.log(this.state.checkedvim);
+    }
+
+   toggletwitt () {
+     this.setState({ checkedtwitt: !this.state.checkedtwitt });
+     console.log(this.state.checkedtwitt);
+  }
 
 test(e) {
 
@@ -98,6 +111,20 @@ test(e) {
             <Form.Field>
       </Form.Field>
 
+          <Checkbox label='Check this box' onChange={this.togglevim.bind(this)} checked={this.state.checkedvim} />
+          <Form.Input
+            name="linkvim"
+            onChange={this.handleChange.bind(this)}
+            value={this.state.linkvim}
+            label='lien'
+            placeholder='url'/>
+          <Checkbox label='Check this box' onChange={this.toggletwitt.bind(this)} checked={this.state.checkedtwitt} />
+          <Form.Input
+            name="linktwitt"
+            onChange={this.handleChange.bind(this)}
+            value={this.state.linktwitt}
+            label='lien'
+            placeholder='url...'/>
 
           <Form.Button onClick={this.handleSave.bind(this)} content="Enregistrer" positive />
           <Form.Button onClick={this.handleCancel.bind(this)} content="Annuler" negative />

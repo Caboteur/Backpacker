@@ -78,11 +78,24 @@ import {withTracker} from 'meteor/react-meteor-data';
            }
          }
 
+         const LogoutButton = () => {
+               if (this.props.loggedin) {
+             return (<Button
+               basic
+               floated='right'
+               color="red"
+               content="Logout"
+               onClick={this.logout}/>)
+             }
+
+         }
+
     return (
 
 
 
       <div >
+      {LogoutButton()}
       <div style={{width:'75%', margin:'auto'}}>
       <div id="equipe" style={{height:"100px", textAlign:"center"}} className="categorie-title">Video<img style={{width:"70px", float:"right",marginTop: "-15px",
     marginRight: "10px"}} src='/image-icon/play.svg'/></div>

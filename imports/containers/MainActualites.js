@@ -139,11 +139,24 @@ import styles from '../style/Article.css'
             }
 
 
+                   const LogoutButton = () => {
+                         if (this.props.loggedin) {
+                       return (<Button
+                         basic
+                         floated='right'
+                         color="red"
+                         content="Logout"
+                         onClick={this.logout}/>)
+                       }
+
+                   }
+
+
      return (
 
          <div className="article-container">
 
-
+              {LogoutButton()}
 
          <div style={{height:"100px", textAlign:"center"}} className="categorie-title">Medias<img style={{width:"70px", float:"right",marginTop: "-15px",
        marginRight: "10px"}} src='/image-icon/actu.svg'/></div>

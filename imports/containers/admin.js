@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Form, Segment, Icon } from 'semantic-ui-react';
+import {Button, Form, Segment, Icon, Checkbox } from 'semantic-ui-react';
 import NewProfiles from '../components/NewProfiles.js';
 import NewArticles from '../components/NewArticles.js';
 import NewVideo from '../components/NewVideo.js';
@@ -78,6 +78,10 @@ constructor (){
      <Button  style={{marginTop:'15px'}} size="mini"color="yellow" content="Gerer mes videos" onClick={this.ChangePageVideo.bind(this)} />
      <div style={{width:'80%', margin:'auto'}}>
      <h1>Nouvelle image</h1>
+     <form>
+   <input type="file" id="userimage" name="userimage"/>
+   <button type="submit" >Upload</button>
+</form>
      <Form.Input
        name="pics"
        onChange={this.handleChange.bind(this)}

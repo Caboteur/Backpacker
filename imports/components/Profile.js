@@ -28,7 +28,7 @@ export default class Profile extends Component {
 
 
     handleRemove(e){
-      
+
       Meteor.call('removeProfile', e.target.name, (err, res)=>{
         if(err){
           Bert.alert({
@@ -207,9 +207,18 @@ export default class Profile extends Component {
              <p className="para-title">{article.title}</p>
               <img  onClick={ handle} className="card-img" src="/image/luisito.png" />
               <p className="fonction-div">{article.fonction}</p>
-              <div>
+              <div style={{maxWidth:'180px', margin: 'auto'}}>
 
-              <img style={{width:"50px"}} src='/image-icon/vimeo.svg'/>
+              {
+              (article.checkedvim)  ?
+            <a href={article.linkvim}><img style={{width:"50px"}} src='/image-icon/vimeo.svg'></img></a>
+              : <div></div>
+            }
+            {
+            (article.checkedtwitt)  ?
+            <a href={article.linktwitt}><img style={{width:"50px"}} src='/image-icon/imdb.svg'></img></a>
+            : <div></div>
+          }
 
               </div>
               {

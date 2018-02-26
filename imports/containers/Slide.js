@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Grid, Card, Image, Icon} from 'semantic-ui-react'
+import { Button, Grid, Card, Image, Icon, Menu} from 'semantic-ui-react'
 import {SectionsContainer, Section} from 'react-fullpage';
 import {withTracker} from 'meteor/react-meteor-data';
 import {bounceInLeft} from 'animate.css';
@@ -10,7 +10,6 @@ import Actualites from '../components/Actualites.js';
 import Profile from '../components/Profile.js';
 import FormReact from '../components/Form.js';
 import Head from '../components/Head.js';
-import Menu from '../components/Menu.js';
 import Sidebar from '../components/Sidebar.js';
 import Maps from '../components/Maps.js';
 import Anim from '../components/anim.js'
@@ -63,8 +62,7 @@ class Slide extends Component {
        const LogoutButton = () => {
              if (this.props.loggedin) {
            return (<Button
-             size="mini"
-             icon="delete"
+             fluid
              color="red"
              content="Logout"
              onClick={this.logout}/>)
@@ -75,6 +73,7 @@ class Slide extends Component {
 
         return (
           <div className="main-page">
+          {LogoutButton()}
           <SectionsContainer {...options}>
           <Section>
           <div className="couv">

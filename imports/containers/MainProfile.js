@@ -84,6 +84,8 @@ import {withTracker} from 'meteor/react-meteor-data';
           name={id}
           content="Supprimer"
           onClick={this.handleRemove.bind(this)}/>)
+
+
       }
     }
 
@@ -113,10 +115,23 @@ import {withTracker} from 'meteor/react-meteor-data';
         }
 
 
+               const LogoutButton = () => {
+                     if (this.props.loggedin) {
+                   return (<Button
+                     fluid
+                     color="red"
+                     content="Logout"
+                     onClick={this.logout}/>)
+                   }
+
+               }
+
+
 
 
         return (
           <div >
+                       {LogoutButton()}
 
                   <div style={{height:"100px", textAlign:"center"}} className="categorie-title">l equipe<img style={{width:"70px", float:'right', marginTop: "-15px",
                 marginRight: "10px"}} src='/image-icon/cafe.svg'/></div>

@@ -18,57 +18,71 @@ import Secondlayout from '../layouts/SecondLayout.js';
 import Mainlayout from '../layouts/MainLayout.js';
 import Welcomelayout from '../layouts/Welcomelayout.js';
 
+privateRoutes = FlowRouter.group({
+  name:'privateroutes',
+  triggersEnter:[function(context, redirect){
+    if(Meteor.userId() == false){
+      console.log("a")
+      return FlowRouter.go('/');
+    }
+  }]
+});
 
-FlowRouter.route('/Admin', {
+
+publicRoutes = FlowRouter.group({
+  name:'publicroutes'
+})
+
+privateRoutes.route('/Admin', {
   name: 'Admin',
   action: function () {
     mount(Mainlayout, { content: <Admin /> });
   },
 });
 
-FlowRouter.route('/MainActualites', {
+publicRoutes.route('/MainActualites', {
   name: 'MainActualites',
   action: function () {
     mount(Secondlayout, { content: <MainActualites /> });
   },
 });
 
-FlowRouter.route('/Fiche', {
+publicRoutes.route('/Fiche', {
   name: 'Fiche',
   action: function () {
     mount(Secondlayout, { content: <MainProfile /> });
   },
 });
 
-FlowRouter.route('/Slide', {
+publicRoutes.route('/Slide', {
   name: 'Slide',
   action: function () {
     mount(Mainlayout, { content: <Slide /> });
   },
 });
 
-FlowRouter.route('/Connection', {
+publicRoutes.route('/Connection', {
   name: 'Connection',
   action: function () {
     mount(Mainlayout, { content: <Connection /> });
   },
 });
 
-FlowRouter.route('/Welcome', {
+publicRoutes.route('/Welcome', {
   name: 'Welcome',
   action: function () {
     mount(Welcomelayout, { content: <Welcome /> });
   },
 });
 
-FlowRouter.route('/MainArticle', {
+publicRoutes.route('/MainArticle', {
   name: 'Main',
   action: function () {
     mount(Secondlayout, { content: <MainArticle /> });
   },
 });
 
-FlowRouter.route('/MainVideo', {
+publicRoutes.route('/MainVideo', {
   name: 'MainVideo',
   action: function () {
     mount(Secondlayout, { content: <MainVideo /> });

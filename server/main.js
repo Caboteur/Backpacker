@@ -112,3 +112,9 @@ Meteor.methods({
 
 
 });
+
+Cloudinary.config({
+  cloud_name: 'druo6yz3w',
+  api_key: '226337333296158',
+  api_secret: '91RskRnhoXFU4j6jqdeXYtlUQFA'
+});
